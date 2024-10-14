@@ -1,5 +1,6 @@
 package com.DragonSouth.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -12,19 +13,21 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class OrderItem {
+public class CartItem {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @JsonIgnore
+    @ManyToOne
+    private Cart cart;
 
     @ManyToOne
     private Food food;
 
     private int quantity;
 
-    private Long totalPrice;
-
-
     private List<String> ingredients = new ArrayList<>();
 
+    private long totalPrice;
 }

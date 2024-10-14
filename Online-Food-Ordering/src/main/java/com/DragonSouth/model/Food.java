@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -13,7 +15,7 @@ import java.util.List;
 @AllArgsConstructor
 public class Food {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String name;
@@ -30,5 +32,17 @@ public class Food {
     private List<String> images;
 
     private boolean available;
+
+    @ManyToOne
+    private Restaurant restaurant;
+
+    private boolean isVegetarian;
+
+    private boolean isSeasonal;
+
+    @ManyToMany
+    private List<IngredientItem> ingredientItems = new ArrayList<>();
+
+    private Date creationDate;
 
 }

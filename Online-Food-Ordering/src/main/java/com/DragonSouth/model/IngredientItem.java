@@ -8,16 +8,23 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
-public class Category {
+@NoArgsConstructor
+public class IngredientItem {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String name;
 
+    private String description;
+
+    @ManyToOne
+    private IngredientCategory category;
+
     @JsonIgnore
     @ManyToOne
     private Restaurant restaurant;
+
+    private boolean inStoke = true;
 }
