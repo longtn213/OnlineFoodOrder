@@ -25,7 +25,7 @@ public class RestaurantController {
     public ResponseEntity<List<Restaurant>> searchRestaurant(@RequestParam String keyword) {
         List<Restaurant> restaurants = restaurantService.searchRestaurants(keyword);
 
-        return new ResponseEntity<>(restaurants, HttpStatus.CREATED);
+        return new ResponseEntity<>(restaurants, HttpStatus.OK);
     }
 
     @GetMapping("")
@@ -33,7 +33,7 @@ public class RestaurantController {
 
         List<Restaurant> restaurants = restaurantService.getAllRestaurants();
 
-        return new ResponseEntity<>(restaurants, HttpStatus.CREATED);
+        return new ResponseEntity<>(restaurants, HttpStatus.OK);
     }
 
 
@@ -42,7 +42,7 @@ public class RestaurantController {
 
         Restaurant restaurants = restaurantService.findRestaurantById(id);
 
-        return new ResponseEntity<>(restaurants, HttpStatus.CREATED);
+        return new ResponseEntity<>(restaurants, HttpStatus.OK);
     }
 
     @PutMapping("/{id}/add-favorites")

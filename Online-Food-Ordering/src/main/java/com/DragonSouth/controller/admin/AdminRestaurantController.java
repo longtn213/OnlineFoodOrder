@@ -1,4 +1,4 @@
-package com.DragonSouth.controller;
+package com.DragonSouth.controller.admin;
 
 import com.DragonSouth.model.Restaurant;
 import com.DragonSouth.model.User;
@@ -12,7 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/admin/restaurant")
+@RequestMapping("/api/restaurant/admin")
 @RequiredArgsConstructor
 public class AdminRestaurantController {
 
@@ -30,7 +30,7 @@ public class AdminRestaurantController {
         return new ResponseEntity<>(restaurant, HttpStatus.CREATED);
     }
 
-    @PostMapping("/update/{restaurantId}")
+    @PutMapping("/update/{restaurantId}")
     public ResponseEntity<Restaurant> updateRestaurant(@RequestBody CreateRestaurantRequest req,
                                                        @PathVariable Long restaurantId) {
 
