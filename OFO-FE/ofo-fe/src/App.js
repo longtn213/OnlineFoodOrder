@@ -1,9 +1,14 @@
 import './App.css';
+import Navbar from "./component/Navbar/Navbar";
+import {CssBaseline, ThemeProvider} from "@mui/material";
+import {darkTheme} from "./Theme/DarkTheme";
 
 function App() {
   return (
     <div>
-      <h1 className="text-blue-600"> Online Ordering Food</h1>
+        <ThemeProvider theme={darkTheme}/>
+        <CssBaseline/>
+      <Navbar/>
     </div>
   );
 }
