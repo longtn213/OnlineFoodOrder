@@ -15,7 +15,7 @@ public interface CartService {
 
     public Cart findCartById(Long id);
 
-    public Cart findCartByUserId(String jwt);
+    public Cart findCartByUserId(Long userId);
 
-    public Cart clearCart(String jwt);
+    public Cart clearCart(Long userId);
 }

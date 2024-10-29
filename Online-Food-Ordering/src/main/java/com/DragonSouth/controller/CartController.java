@@ -2,9 +2,11 @@ package com.DragonSouth.controller;
 
 import com.DragonSouth.model.Cart;
 import com.DragonSouth.model.CartItem;
+import com.DragonSouth.model.User;
 import com.DragonSouth.request.AddCartItemRequest;
 import com.DragonSouth.request.UpdateCartItemRequest;
 import com.DragonSouth.service.CartService;
+import com.DragonSouth.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 public class CartController {
     private final CartService cartService;
+    private final UserService userService;
 
     @PutMapping("/cart/add")
     public ResponseEntity<CartItem> addItemToCart(@RequestBody AddCartItemRequest req,
@@ -39,13 +42,15 @@ public class CartController {
     @PutMapping("/cart/clear")
     public ResponseEntity<Cart> clearCart(@RequestBody UpdateCartItemRequest req,
                                                            @RequestHeader("Authorization") String jwt){
-        Cart cart =cartService.clearCart(jwt);
+        User user = userService.findUserByJwtToken(jwt);
+        Cart cart =cartService.clearCart(user.getId());
         return ResponseEntity.ok(cart);
     }
 
     @GetMapping("/cart")
     public ResponseEntity<Cart> findUserCart(@RequestHeader("Authorization") String jwt){
-        Cart cart =cartService.findCartByUserId(jwt);
+        User user = userService.findUserByJwtToken(jwt);
+        Cart cart =cartService.findCartByUserId(user.getId());
         return ResponseEntity.ok(cart);
     }
 
