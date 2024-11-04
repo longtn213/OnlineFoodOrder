@@ -1,8 +1,9 @@
 import React from 'react';
 import SearchIcon from '@mui/icons-material/Search';
-import {Avatar, IconButton} from "@mui/material";
+import {Avatar, Badge, IconButton} from "@mui/material";
 import {pink} from "@mui/material/colors";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import './Navbar.css'
 const Navbar = () => {
     return (
         <div className='px-5 z-50 py-[.8rem] bg-[#e91e63] lg:px-20 flex justify-between'>
@@ -19,9 +20,9 @@ const Navbar = () => {
                     <Avatar sx={{bgcolor: "White", color: pink.A400}}>C</Avatar>
                 </div>
                 <div className=''>
-                    <IconButton>
-                        <ShoppingCartIcon sx={{fontSize: "1.5rem"}}/>
-                    </IconButton>
+                    <Badge badgeContent={3} color="black">
+                        <ShoppingCartIcon sx={{fontSize: "1.5rem"}} />
+                    </Badge>
                 </div>
             </div>
         </div>

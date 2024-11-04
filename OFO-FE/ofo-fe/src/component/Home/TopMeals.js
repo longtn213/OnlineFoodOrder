@@ -1,0 +1,50 @@
+export const topMeals = [
+    {
+        image:"https://cdn.pixabay.com/photo/2017/12/09/08/18/pizza-3007395_640.jpg",
+        title:"Pizza"
+    },
+    {
+        image:"https://cdn.pixabay.com/photo/2020/10/05/19/55/hamburger-5630646_640.jpg",
+        title:"Burger"
+    },
+    {
+        image:"https://cdn.pixabay.com/photo/2024/04/06/04/15/ai-generated-8678599_640.jpg",
+        title:"Sandwich"
+    },
+    {
+        image:"https://cdn.pixabay.com/photo/2020/03/25/02/27/english-sticky-rice-4965904_640.jpg",
+        title:"Fried Rice"
+    },
+    {
+        image:"https://cdn.pixabay.com/photo/2022/06/14/18/58/biryani-with-kebab-7262655_640.jpg",
+        title:"Biryani"
+    },
+    {
+        image:"https://cdn.pixabay.com/photo/2017/08/27/03/25/cake-2685101_640.jpg",
+        title:"Cake"
+    },
+    {
+        image:"https://cdn.pixabay.com/photo/2012/07/09/07/16/thali-51996_640.jpg",
+        title:"Thali"
+    },
+    {
+        image:"https://cdn.pixabay.com/photo/2020/03/07/02/28/bread-soup-4908531_640.jpg",
+        title:"North Indian Food"
+    },
+    {
+        image:"https://cdn.pixabay.com/photo/2020/03/25/02/31/rolls-4965915_1280.jpg",
+        title:"Rolls"
+    },
+    {
+        image:"https://cdn.pixabay.com/photo/2020/03/28/14/52/fried-chicken-4977359_640.jpg",
+        title:"Chicken"
+    },
+    {
+        image:"https://cdn.pixabay.com/photo/2023/05/27/12/35/noodles-8021415_640.png",
+        title:"Noodles"
+    },
+    {
+        image:"https://cdn.pixabay.com/photo/2022/01/27/07/34/manchurian-6971355_640.jpg",
+        title:"Dosa"
+    }
+]
